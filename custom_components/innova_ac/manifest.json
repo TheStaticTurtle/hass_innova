@@ -1,0 +1,7 @@
+{
+  "domain": "innova_ac",
+  "name": "Innova AC",
+  "documentation": "https://github.com/TheStaticTurtle/hass_innova",
+  "requirements": [],
+  "codeowners": ["TheStaticTurtle"]
+}

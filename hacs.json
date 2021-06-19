@@ -1,0 +1,7 @@
+{
+  "name": "Innova",
+  "country": "EN",
+  "domains": ["climate"],
+  "homeassistant": "0.110.0",
+  "render_readme": true
+}
