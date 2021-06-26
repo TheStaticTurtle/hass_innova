@@ -109,6 +109,8 @@ class InnovaClimate(ClimateEntity):
 			self._available = False
 		except requests.exceptions.ConnectionError:
 			self._available = False
+		except Exception as e:
+			_LOGGER.error("Error while updating", e)
 
 	@property
 	def available(self):
@@ -200,6 +202,8 @@ class InnovaClimate(ClimateEntity):
 		except json.decoder.JSONDecodeError:
 			_LOGGER.error('set_fan_mode(): Failed to decode JSON data')
 			pass
+		except Exception as e:
+			_LOGGER.error("Error while setting temperature", e)
 		self.innova_update_status()
 		self.schedule_update_ha_state()
 
@@ -218,6 +222,8 @@ class InnovaClimate(ClimateEntity):
 		except json.decoder.JSONDecodeError:
 			_LOGGER.error('set_fan_mode(): Failed to decode JSON data')
 			pass
+		except Exception as e:
+			_LOGGER.error("Error while setting swing mode", e)
 		self.innova_update_status()
 		self.schedule_update_ha_state()
 
@@ -236,6 +242,8 @@ class InnovaClimate(ClimateEntity):
 		except json.decoder.JSONDecodeError:
 			_LOGGER.error('set_fan_mode(): Failed to decode JSON data')
 			pass
+		except Exception as e:
+			_LOGGER.error("Error while setting fan mode", e)
 		self.innova_update_status()
 		self.schedule_update_ha_state()
 
@@ -269,5 +277,7 @@ class InnovaClimate(ClimateEntity):
 		except json.decoder.JSONDecodeError:
 			_LOGGER.error('set_fan_mode(): Failed to decode JSON data')
 			pass
+		except Exception as e:
+			_LOGGER.error("Error while setting hvac mode", e)
 		self.innova_update_status()
 		self.schedule_update_ha_state()
